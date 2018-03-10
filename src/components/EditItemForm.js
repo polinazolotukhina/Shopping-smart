@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from 'material-ui/TextField';
 import renderDatePicker from './MyDatePicker';
+import Upload from './Upload'
 
 
 const validate = values => {
@@ -62,7 +63,7 @@ class EditItem extends React.Component {
   // }
 
 render() {
-  const { handleSubmit, pristine, reset, submitting } = this.props
+  const { handleSubmit, pristine, reset, submitting, img } = this.props;
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -100,18 +101,19 @@ render() {
             className="inputDate"
         />
       </div>
-        <button type="submit" disabled={pristine || submitting}>
+      <Upload img={img}/>
+        <button type="submit">
           Save
         </button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values!!
+          Clear Values
         </button>
     </form>
-  )
+);
 }
 }
 export default reduxForm({
   form: 'EditItem', // a unique identifier for this form
   validate,
   initialValues: { min: 0, max: 0 }
-})(EditItem)
+})(EditItem);

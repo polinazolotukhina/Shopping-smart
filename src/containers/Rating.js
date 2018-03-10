@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import * as actions from '../actions/actions';
-import ItemsList from './../components/ItemsList';
+import RateList from './../components/RateList';
 // import ChartData from './../components/ChartData';
 
 
-class Home extends React.Component {
+class Rating extends React.Component {
     componentWillMount() {
        this.props.actions.itemsFetch();
     }
@@ -15,9 +15,11 @@ class Home extends React.Component {
         const { items } = this.props;
         return (
             <div>
+            I AM RATING!:)
+
                     { items &&
                         <div className="text-center">
-                            <ItemsList items={items.items} />
+                            <RateList items={items.items} />
                         </div>
                     }
 
@@ -26,7 +28,7 @@ class Home extends React.Component {
     }
 }
 
-Home.propTypes = {
+Rating.propTypes = {
     actions: PropTypes.object.isRequired,
     items: PropTypes.object.isRequired,
 };
@@ -48,6 +50,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Home);
+)(Rating);
 
     // <ChartData items={Object.values(mydata)} />

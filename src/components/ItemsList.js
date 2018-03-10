@@ -50,7 +50,7 @@ class ItemsList extends React.Component {
                                       primaryText= {`${item.item}, ${item.brand}`}
                                       secondaryText={`wear: ${item.times} times`}
                                       secondaryTextLines={2}
-                                      leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                                      leftAvatar={<Avatar src={item.img} />}
                                       rightIconButton={
                                           <div>
                                                 <div className='btn-left'>

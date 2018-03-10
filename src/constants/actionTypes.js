@@ -7,3 +7,5 @@ export const ITEM_EDIT = 'ITEM_EDIT';
 export const ITEM_DELETE = 'ITEM_DELETE';
 export const ITEM_REWRITE = 'ITEM_REWRITE';
 export const PLUSMINUS = 'PLUSMINUS';
+export const ITEM_UPLOAD = 'ITEM_UPLOAD';
+export const ITEM_ORDER = 'ITEM_ORDER';

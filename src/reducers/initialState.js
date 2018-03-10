@@ -2,5 +2,6 @@ export default {
     items: {
         items: []
     },
-    editItem: {}
+    editItem: {},
+    uploadItem: []
 };

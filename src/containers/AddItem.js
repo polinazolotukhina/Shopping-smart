@@ -2,26 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { RaisedButton } from 'material-ui';
 import { browserHistory } from 'react-router';
 import AddForm from '../components/AddForm';
 import * as actions from '../actions/actions';
 
 class AddItem extends React.Component {
     submit(values) {
-      this.props.actions.saveItem(values);
-      browserHistory.push('/');
+        const newValues = Object.assign(
+            {},
+            values,
+            {
+                img: this.props.items.uploadItem,
+                rating: values.price / values.times,
+                times: parseInt(values.times),
+                price: parseInt(values.price)
+             }
+        );
+        this.props.actions.saveItem(newValues);
+        browserHistory.push('/');
     }
     render() {
         return (
             <div className="col-md-4 col-md-offset-4">
-                <RaisedButton
-                    label="List"
-                    onClick={() => { browserHistory.push('/'); }}
-                />
                 <div className="text-center"><h1> Add New Item</h1>
                     <AddForm
-                        onSubmit={(values)=>this.submit(values)}
+                        onSubmit={(values) => this.submit(values)}
                     />
                 </div>
             </div>

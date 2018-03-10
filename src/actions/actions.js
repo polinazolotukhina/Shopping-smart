@@ -22,6 +22,25 @@ export const itemsFetch = () => {
     };
 };
 
+//==================      DATA SORT      ========================
+
+export const sortData = (criteria, desc) => {
+    return (dispatch) => {
+        firebase.database().ref('/items').orderByChild(criteria)
+        .on('value', snapshot => {
+            const results = [];
+            snapshot.forEach(function(child) {
+                results.push(child.val())
+            });
+            dispatch({
+                type: types.ITEM_ORDER,
+                payload: (desc) ? results.reverse() : results
+            });
+        });
+    };
+};
+
+//==================       UPDATE      ========================
 function itemUpdate(myitem) {
     return {
         type: types.ITEM_EDIT,
@@ -34,6 +53,24 @@ export const editItem = (item) => {
         dispatch(itemUpdate(item));
     };
 };
+
+//=====================IMG TO  UPLOAD ================================================
+
+function itemUpload(img) {
+    return {
+        type: types.ITEM_UPLOAD,
+        uploadItem: img
+    };
+}
+export const uploadedItem = (item) => {
+    return (dispatch) => {
+        dispatch(itemUpload(item));
+    };
+};
+
+//=====================================================================
+
+
 export const deleteItem = (id) => {
     return (dispatch) => {
          firebase.database().ref('items').child(id).remove();
@@ -42,6 +79,7 @@ export const deleteItem = (id) => {
 };
 
 export const rewriteItem = (values, id) => {
+    console.log("IN ACTION", values)
     return (dispatch) => {
          firebase.database().ref('items').child(id).update(values);
          dispatch({ type: types.ITEM_REWRITE });

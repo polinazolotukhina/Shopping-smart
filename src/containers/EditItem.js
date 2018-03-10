@@ -2,31 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { RaisedButton } from 'material-ui';
 import { browserHistory } from 'react-router';
 import EditItemForm from '../components/EditItemForm';
 import * as actions from '../actions/actions';
 
 class EditItem extends React.Component {
-    constructor(props){
-     super(props);
-    }
     submit(values, items) {
-      this.props.actions.rewriteItem(values, items.editItem.id);
-      browserHistory.push('/');
+      const newValues = Object.assign(
+                                        {},
+                                        values,
+                                        {
+                                            img: (values.img == this.props.items.uploadItem) ? (this.props.items.uploadItem) : (this.props.items.uploadItem),
+                                            rating:  values.price / values.times,
+                                            times: parseInt(values.times),
+                                            price: parseInt(values.price)
+                                         }
+                                     );
 
+      this.props.actions.rewriteItem(newValues, items.editItem.id);
+      browserHistory.push('/');
     }
     render() {
         const { items, initialValues } = this.props;
         return (
             <div className="col-md-4 col-md-offset-4">
-                <RaisedButton
-                    label="List"
-                    onClick={() => { browserHistory.push('/'); }}
-                />
                 <div className="text-center"><h1> Edit Item</h1>
                     <EditItemForm
                         initialValues={initialValues}
+                        img={items.editItem.img}
                         onSubmit={(values) => this.submit(values, items)}
                     />
                 </div>

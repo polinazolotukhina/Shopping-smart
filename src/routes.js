@@ -4,6 +4,7 @@ import App from './components/App';
 import Home from './containers/Home';
 import AddItem from './containers/AddItem';
 import EditItem from './containers/EditItem';
+import Rating from './containers/Rating';
 import NotFoundPage from './components/NotFoundPage';
 
 
@@ -13,6 +14,7 @@ export default (
             <IndexRoute component={Home} />
             <Route path="addItem" component={AddItem} />
             <Route path="editItem" component={EditItem} />
+            <Route path="rating" component={Rating} />
             <Route path="*" component={NotFoundPage} />
         </Route>
     </Router>

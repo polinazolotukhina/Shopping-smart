@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from 'material-ui/TextField';
 import renderDatePicker from './MyDatePicker';
+import Upload from './Upload'
 
 
 const validate = values => {
@@ -48,6 +49,18 @@ const renderTextField = ({
 
 class AddForm extends React.Component {
 
+    constructor(props) {
+        super(props);
+         this.state = { pictures: [] };
+         this.onDrop = this.onDrop.bind(this);
+    }
+
+    onDrop(picture) {
+        this.setState({
+            pictures: this.state.pictures.concat(picture),
+        });
+    }
+
 render() {
   const { handleSubmit, pristine, reset, submitting } = this.props
   return (
@@ -87,6 +100,7 @@ render() {
             className="inputDate"
         />
       </div>
+      <Upload />
         <button type="submit" disabled={pristine || submitting}>
           Save
         </button>
