@@ -18,7 +18,9 @@
 ![Alt text](https://github.com/polinazolotukhina/Shopping-smart/blob/master/Screen%20Shot%202018-03-12%20at%205.01.44%20PM.png)
 
 
-![Alt text](https://github.com/polinazolotukhina/Shopping-smart/blob/master/Screen%20Shot%202018-03-12%20at%205.01.02%20PM.png)
+![Alt text](https://github.com/polinazolotukhina/Shopping-smart/blob/master/Screen%20Shot%202018-03-12%20at%205.18.19%20PM.png)
+
+![Alt text](https://github.com/polinazolotukhina/Shopping-smart/blob/master/Screen%20Shot%202018-03-12%20at%205.02.22%20PM.png)
 
 
 
@@ -26,6 +28,8 @@
 )
 
 ![Alt text](https://github.com/polinazolotukhina/Shopping-smart/blob/master/Screen%20Shot%202018-03-12%20at%205.02.22%20PM.png)
+
+
 
 
 
