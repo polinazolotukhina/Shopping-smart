@@ -3,8 +3,9 @@ import { Field, reduxForm } from 'redux-form';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from 'material-ui/TextField';
+import { Button } from 'react-bootstrap';
 import renderDatePicker from './MyDatePicker';
-import Upload from './Upload'
+import Upload from './Upload';
 
 
 const validate = values => {
@@ -12,6 +13,8 @@ const validate = values => {
   const requiredFields = [
     'item',
     'price',
+    'brand',
+    'times',
     'day'
 ];
   requiredFields.forEach(field => {
@@ -87,12 +90,12 @@ render() {
         <Field
             name="times"
             component={renderTextField}
-            label="times"
+            label="times it was used"
             type="number"
         />
       </div>
       <div>
-      Choose a day
+      Day of purchase
         <Field
             name="day"
             component={renderDatePicker}
@@ -101,12 +104,12 @@ render() {
         />
       </div>
       <Upload />
-        <button type="submit" disabled={pristine || submitting}>
+        <Button type="submit" disabled={pristine || submitting}>
           Save
-        </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
+        </Button>
+        <Button type="button" disabled={pristine || submitting} onClick={reset}>
           Clear Values
-        </button>
+        </Button>
     </form>
   )
 }

@@ -6,7 +6,7 @@ import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
 class renderDatePicker extends React.Component {
-  
+
   constructor (props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)

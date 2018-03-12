@@ -36,8 +36,8 @@ class Upload extends React.Component {
                   <div key={f.name}>
                         <p>{f.name}</p>
                         <p> {f.size} bytes </p>
-                        <img style={{width:'200px'}} src={f.preview} />
-                  </div>)) : (<img style={{ width: '200px' }}src={img} />)
+                        <img style={{width:'100%'}} src={f.preview} />
+                  </div>)) : (<img style={{ width: '100%' }}src={img} />)
             }
 
           </div>

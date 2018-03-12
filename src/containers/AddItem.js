@@ -15,7 +15,7 @@ class AddItem extends React.Component {
                 img: this.props.items.uploadItem,
                 rating: values.price / values.times,
                 times: parseInt(values.times),
-                price: parseInt(values.price)
+                price: parseInt(values.price),
              }
         );
         this.props.actions.saveItem(newValues);
@@ -24,7 +24,7 @@ class AddItem extends React.Component {
     render() {
         return (
             <div className="col-md-4 col-md-offset-4">
-                <div className="text-center"><h1> Add New Item</h1>
+                <div className="text-center date"><h1> Add New Item</h1>
                     <AddForm
                         onSubmit={(values) => this.submit(values)}
                     />

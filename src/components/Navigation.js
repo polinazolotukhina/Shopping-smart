@@ -28,6 +28,9 @@ class Navigation extends React.Component {
                         <li>
                             <Link to="/rating">Rating</Link>
                         </li>
+                        <li>
+                            <Link to="/chart">Chart</Link>
+                        </li>
                     </ul>
                </div>
             </div>

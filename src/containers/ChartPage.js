@@ -2,12 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
+import { Tooltip, OverlayTrigger,  Button } from 'react-bootstrap';
 import * as actions from '../actions/actions';
-import RateList from './../components/RateList';
-// import ChartData from './../components/ChartData';
+import ItemsList from './../components/ItemsList';
+import ChartData from './../components/ChartData';
+
+const tooltip = (text) => (
+  <Tooltip id="tooltip">
+     {text}
+  </Tooltip>
+);
 
 
-class Rating extends React.Component {
+class Home extends React.Component {
     componentWillMount() {
        this.props.actions.itemsFetch();
     }
@@ -15,9 +22,11 @@ class Rating extends React.Component {
         const { items } = this.props;
         return (
             <div>
+
+
                     { items &&
-                        <div>
-                            <RateList items={items.items} />
+                        <div className="text-center">
+                            <ChartData items={items.items} />
                         </div>
                     }
 
@@ -26,7 +35,7 @@ class Rating extends React.Component {
     }
 }
 
-Rating.propTypes = {
+Home.propTypes = {
     actions: PropTypes.object.isRequired,
     items: PropTypes.object.isRequired,
 };
@@ -48,6 +57,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Rating);
-
-    // <ChartData items={Object.values(mydata)} />
+)(Home);

@@ -2,8 +2,10 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from 'material-ui/TextField';
+import { Button } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 import renderDatePicker from './MyDatePicker';
-import Upload from './Upload'
+import Upload from './Upload';
 
 
 const validate = values => {
@@ -88,12 +90,12 @@ render() {
         <Field
             name="times"
             component={renderTextField}
-            label="times"
+            label="times it was used"
             type="number"
         />
       </div>
       <div>
-      Choose a day
+
         <Field
             name="day"
             component={renderDatePicker}
@@ -102,12 +104,12 @@ render() {
         />
       </div>
       <Upload img={img}/>
-        <button type="submit">
+        <Button type="submit">
           Save
-        </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
+        </Button>
+        <Button type="button" onClick={() => { browserHistory.push('/'); }}>
+          Cancel
+        </Button>
     </form>
 );
 }

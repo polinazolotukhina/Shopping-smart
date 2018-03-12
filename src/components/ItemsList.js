@@ -42,13 +42,12 @@ class ItemsList extends React.Component {
         return (
                 <div>
                     <List>
-                      <Subheader>Recent chats</Subheader>
                       {
-                            mydata &&mydata.map((item, index) =>
+                            mydata && mydata.map((item, index) =>
                                 <div key={index}>
                                     <ListItem
                                       primaryText= {`${item.item}, ${item.brand}`}
-                                      secondaryText={`wear: ${item.times} times`}
+                                      secondaryText={`used: ${item.times} times`}
                                       secondaryTextLines={2}
                                       leftAvatar={<Avatar src={item.img} />}
                                       rightIconButton={

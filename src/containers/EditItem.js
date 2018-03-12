@@ -15,7 +15,7 @@ class EditItem extends React.Component {
                                             img: (values.img == this.props.items.uploadItem) ? (this.props.items.uploadItem) : (this.props.items.uploadItem),
                                             rating:  values.price / values.times,
                                             times: parseInt(values.times),
-                                            price: parseInt(values.price)
+                                            price: parseInt(values.price),
                                          }
                                      );
 
@@ -26,7 +26,7 @@ class EditItem extends React.Component {
         const { items, initialValues } = this.props;
         return (
             <div className="col-md-4 col-md-offset-4">
-                <div className="text-center"><h1> Edit Item</h1>
+                <div className="text-center date"><h1> Edit Item</h1>
                     <EditItemForm
                         initialValues={initialValues}
                         img={items.editItem.img}
