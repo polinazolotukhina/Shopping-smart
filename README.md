@@ -6,9 +6,9 @@
 # SImple-to-do
 
 
-**Clone the project**. git clone https://github.com/polinazolotukhina/SImple-to-do.git
+**Clone the project**. git clone https://github.com/polinazolotukhina/Shopping-smart.git
 
-**Go to the folder **. cd SImple-to-do
+**Go to the folder **. cd Shopping-smart
 
 **Install **. npm install
 
