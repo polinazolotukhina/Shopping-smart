@@ -9,12 +9,8 @@ import rootReducer from '../reducers';
 
 
 const config = {
-    apiKey: "AIzaSyCFTGT-41tuggR3IHy13TjiKXUkf74N9UY",
-    authDomain: "my-mobile-app-aadf7.firebaseapp.com",
-    databaseURL: "https://my-mobile-app-aadf7.firebaseio.com",
-    projectId: "my-mobile-app-aadf7",
-    storageBucket: "my-mobile-app-aadf7.appspot.com",
-    messagingSenderId: "590959121447"
+      //......PLEASE ADD KEYS...
+
 }
 firebase.initializeApp(config);
 
